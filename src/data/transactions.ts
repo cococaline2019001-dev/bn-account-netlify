@@ -20,7 +20,7 @@ export interface Transaction {
   date: string
 }
 
-export const INITIAL_BALANCE = 250_000_000
+export const INITIAL_BALANCE = 5_360_000
 
 export const INITIAL_TRANSACTIONS: Transaction[] = [
   { id: 't1', name: 'Amina Diallo', label: 'Virement reçu', amount: 1_250_000, kind: 'received', category: 'transfer', date: '2026-11-05T09:42:00Z' },

@@ -110,11 +110,11 @@ function Home() {
           <div className="relative flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="flex size-10 items-center justify-center rounded-full bg-white/15 text-sm font-semibold ring-1 ring-white/20">
-                JD
+                FM
               </div>
               <div>
                 <p className="text-xs text-blue-200/80">Bonjour,</p>
-                <p className="text-sm font-medium">florence catherine</p>
+                <p className="text-sm font-medium">Francis Moreno</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -259,6 +259,7 @@ function TransferSheet({
   const [identifierType, setIdentifierType] = useState<"IBAN" | "BIC" | "RIB">(
     "IBAN",
   );
+  const [recipientName, setRecipientName] = useState("");
   const [identifier, setIdentifier] = useState("");
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
@@ -266,6 +267,7 @@ function TransferSheet({
   const [accountBlocked, setAccountBlocked] = useState(false);
 
   function reset() {
+    setRecipientName("");
     setIdentifierType("IBAN");
     setIdentifier("");
     setAmount("");
@@ -306,6 +308,18 @@ function TransferSheet({
         </SheetHeader>
 
         <form onSubmit={handleSubmit} className="space-y-5 px-6 pt-2">
+          <label className="block">
+            <span className="mb-1.5 block text-sm font-medium text-slate-700">
+              Noms et prénoms
+            </span>
+            <input
+              value={recipientName}
+              onChange={(e) => setRecipientName(e.target.value)}
+              autoComplete="section-recipient name"
+              placeholder="Nom et prénom du bénéficiaire"
+              className="w-full rounded-xl border border-border bg-muted px-4 py-3 text-base text-foreground outline-none focus-visible:ring-4 focus-visible:ring-ring/30"
+            />
+          </label>
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium text-slate-700">
               Type de coordonnées bancaires

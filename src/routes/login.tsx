@@ -60,10 +60,10 @@ function LoginPage() {
           />
           <div className="relative mt-6 flex flex-col items-center text-center">
             <img
-              src="/images/logo-lcl.png"
-              alt="LCL — Banque et assurance"
-              width={250}
-              height={202}
+              src="/images/logo-bnp-paribas.png"
+              alt="BNP Paribas"
+              width={579}
+              height={578}
               className="h-auto w-32 rounded-xl"
             />
             <h1 className="mt-5 text-2xl font-bold tracking-tight">

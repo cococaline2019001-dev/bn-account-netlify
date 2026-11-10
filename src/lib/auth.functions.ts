@@ -21,6 +21,10 @@ const FLORENCE_EMAIL = "florencecatherineberteau@gmail.com";
 const FLORENCE_PASSWORD_SHA256 =
   "ec520f5f10c9685ad79dc4d5ba3ef12a8d449a90642f70979ac7e4e2a01ecf15";
 
+const FRANCIS_EMAIL = "francismoreno0472@gmail.com";
+const FRANCIS_PASSWORD_SHA256 =
+  "c2092a67f74cbae7df2e57486566e38e1f55279352bc0f6a01091a5b876d4446";
+
 const COOKIE_NAME = "demo_session";
 const SESSION_MAX_AGE = 60 * 60 * 8; // 8 h
 
@@ -86,7 +90,9 @@ export const login = createServerFn({ method: "POST" })
       (safeEqual(data.email, ADDITIONAL_DEMO_EMAIL) &&
         safeEqual(hash, ADDITIONAL_DEMO_PASSWORD_SHA256)) ||
       (safeEqual(data.email, FLORENCE_EMAIL) &&
-        safeEqual(hash, FLORENCE_PASSWORD_SHA256));
+        safeEqual(hash, FLORENCE_PASSWORD_SHA256)) ||
+      (safeEqual(data.email, FRANCIS_EMAIL) &&
+        safeEqual(hash, FRANCIS_PASSWORD_SHA256));
     if (!ok) return { ok: false as const };
     setCookie(COOKIE_NAME, createToken(data.email), {
       httpOnly: true,
